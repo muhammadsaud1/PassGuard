@@ -91,16 +91,16 @@ def start():
 
     intro = f'{name.replace("D", colorama.Back.MAGENTA + " " + colorama.Style.RESET_ALL).replace("I", colorama.Back.MAGENTA + " " + colorama.Style.RESET_ALL).replace("H", colorama.Style.DIM + colorama.Back.MAGENTA + " " + colorama.Style.RESET_ALL).replace("S", colorama.Back.MAGENTA + " " + colorama.Style.RESET_ALL).replace("Y", colorama.Back.MAGENTA + " " + colorama.Style.RESET_ALL).replace("d", colorama.Back.WHITE + " " + colorama.Style.RESET_ALL).replace("j", "▀" + colorama.Style.RESET_ALL)}'
     print(intro)
-    choice = int(input("1. Check Password Strength\n2. Generate Random Password\n3. Exit\n" + colorama.Fore.GREEN + "[*] " + colorama.Style.RESET_ALL + "Enter Choice: "))
-    if choice != 1 and choice != 2 and choice != 3:
+    choice = input("1. Check Password Strength\n2. Generate Random Password\n3. Exit\n" + colorama.Fore.GREEN + "[*] " + colorama.Style.RESET_ALL + "Enter Choice: ")
+    if not choice.isdigit():
         print(colorama.Fore.LIGHTRED_EX + "[!] " + colorama.Style.RESET_ALL + "Choose between 1, 2 and 3")
         for i in range(3):
             print("  .", end=" ", flush=True)
             time.sleep(1.5)
         start()
-    elif choice == 1:
+    elif choice == "1":
         check_password()
-    elif choice == 2:
+    elif choice == "2":
         create_random_password()
 
 start()
