@@ -1,4 +1,4 @@
-#PASSWORD STRENGTH CHECKER
+# PassGuard - Password Strength Checker
 import string
 import colorama, subprocess, time, sys, os, random
 
